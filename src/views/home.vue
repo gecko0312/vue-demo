@@ -5,6 +5,62 @@ import firstImg from "../components/image/白沙灣.jpg";
 import secondImg from "../components/image/花蓮.jpg";
 import thirdtImg from "../components/image/風景.jpg";
 import cardList from "./cardList.vue";
+// 生測試資料
+const travelData = ref([
+  {
+    id: 1,
+    title: "data1_title",
+    max: 36,
+    current: 24, //當前人數
+    content: "data1_content", //內容
+    discountNumber: 20, //滿 20人
+    discountMoney: 400, //減400元
+  },
+]);
+const countdownData = ref([
+  {
+    id: "countdown_1",
+    title: "countdown1_tilte",
+    finDate: "2024/06/01 09:50:00",
+    nowPrice: 1580,
+    originalPrice: 1990,
+  },
+]);
+const date = ref("");
+const pointData = ref([
+  {
+    id: "pointData_1",
+    title: "point1_tilte",
+    content: "pointData1_content",
+  },
+]);
+
+for (let i = 2; i < 11; i++) {
+  travelData.value.push({
+    id: i,
+    title: "data" + i + "_title",
+    max: Math.floor(Math.random() * 100 + 1),
+    current: Math.floor(Math.random() * 100 + 1),
+    content: "data" + i + "_content",
+    discountNumber: Math.floor(Math.random() * 30 + 1),
+    discountMoney: Math.floor(Math.random() * 1000 + 200),
+  });
+
+  date.value = i < 10 ? "0" + i : "" + i;
+  countdownData.value.push({
+    id: "countdown_" + i,
+    title: "countdown" + i + "_tilte",
+    finDate: "2024/06/" + date.value + " 09:50:00",
+    nowPrice: Math.floor(Math.random() * 1000 + 100) * 10,
+    originalPrice: Math.floor(Math.random() * 1000 + 100) * 10,
+  });
+
+  pointData.value.push({
+    id: "pointData_" + i,
+    title: "point" + i + "_tilte",
+    content: "pointData" + i + "_content",
+  });
+}
 </script>
 
 <template>
@@ -45,192 +101,35 @@ import cardList from "./cardList.vue";
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+  <!-- 確定成團cardList -->
   <div>
     <div class="cardTitleBox">
       <p style="border-bottom: 5px; box-shadow: 0 1px; width: 15cm">
         <span class="cardTitle">確定成團</span>
         <span class="cardSubTitle">大家都搶著加入的熱門行程！！</span>
       </p>
-      <!-- <hr style="width: 30%" /> -->
     </div>
-    <cardList />
+    <cardList card-type="travelCard" :data="travelData" />
   </div>
-
+  <!-- 限時特價cardList -->
   <div>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-      recusandae qui nisi quia corrupti et sint quod iusto. Est eligendi
-      consequatur consequuntur nostrum natus debitis, temporibus quibusdam!
-      Eaque, sapiente officia?
-    </p>
-    <p>
-      Nemo pariatur, ab sequi minima asperiores aspernatur. Eius suscipit
-      laborum, ullam animi exercitationem, culpa repudiandae ex quasi doloremque
-      odit consectetur veniam facere. Placeat optio, voluptatum expedita nostrum
-      minima soluta doloribus.
-    </p>
-    <p>
-      Culpa illum quia ratione sapiente! Maxime in provident voluptatibus
-      mollitia enim dignissimos deleniti nulla cupiditate perspiciatis
-      consectetur, perferendis molestiae explicabo ipsum exercitationem, dolorum
-      modi ut odit ex repellat amet ducimus!
-    </p>
-    <p>
-      Iusto id reprehenderit delectus incidunt beatae temporibus voluptates
-      aperiam blanditiis eos aspernatur tempore ex, ipsa asperiores, corrupti ut
-      doloremque quaerat quae excepturi veritatis, deleniti recusandae? Qui
-      molestias unde at incidunt.
-    </p>
-    <p>
-      Aut fugiat tempore architecto eius fuga voluptatum dignissimos voluptate
-      quam distinctio. Earum odit dignissimos molestias quae blanditiis, cumque
-      consectetur optio quos. Molestiae, eveniet ipsam tenetur omnis
-      exercitationem repellendus repellat necessitatibus?
-    </p>
-    <p>
-      Animi reprehenderit assumenda quam, quia commodi odio explicabo?
-      Consequuntur quia quidem et similique perferendis dignissimos molestias
-      temporibus accusamus esse eum assumenda, nam, architecto debitis iste cum
-      tempore culpa est eveniet.
-    </p>
-    <p>
-      Rerum tenetur temporibus minus. Sequi est praesentium odit in aliquam iure
-      dolore, doloremque cum quos tempore debitis quisquam modi fuga dicta
-      necessitatibus, ullam porro. Vero natus ducimus ab voluptatum inventore!
-    </p>
-    <p>
-      Ipsam hic laborum pariatur? Natus enim perspiciatis excepturi eos modi id
-      dicta. Sed fugit facilis illum aliquam eos deserunt, numquam neque earum
-      reiciendis velit ipsam minima tempore rerum. Nulla, qui?
-    </p>
-    <p>
-      Fugiat perferendis officiis dolores autem minima. Inventore repellendus,
-      expedita dicta quia dolore officiis nulla alias, accusamus fugiat non
-      iusto sequi quisquam perspiciatis nesciunt, dignissimos placeat. Qui sunt
-      repudiandae quibusdam aspernatur.
-    </p>
-    <p>
-      Officia magnam neque, maxime ad corrupti aut cupiditate adipisci rem illum
-      blanditiis enim vitae quaerat ratione debitis autem sequi numquam, ipsam
-      exercitationem. Culpa voluptates autem eveniet ipsa nobis laudantium nemo!
-    </p>
-    <p>
-      Quisquam, voluptatum quod? Itaque quod quibusdam alias, debitis sapiente
-      numquam voluptas quas. Aut fugit consequatur nam, veniam quae, sit quam
-      corrupti provident aspernatur earum ut corporis vel voluptates culpa
-      reiciendis?
-    </p>
-    <p>
-      Saepe ipsa aliquid eaque recusandae exercitationem. Magni recusandae et
-      enim quas error quibusdam aliquid nihil eius, blanditiis beatae veniam
-      inventore illo, velit impedit veritatis tempora consequuntur aperiam
-      nesciunt deserunt odit?
-    </p>
-    <p>
-      Ratione deleniti, officiis nostrum voluptate doloremque sunt alias
-      aspernatur soluta dignissimos facere assumenda et modi adipisci nihil
-      dolore excepturi, quidem minima consequuntur cupiditate dolorum! Corporis
-      quos ad debitis totam optio.
-    </p>
-    <p>
-      Pariatur illum expedita dolorem repellendus nulla ipsa obcaecati
-      blanditiis, cumque esse fuga eos enim necessitatibus molestias quis totam
-      quae, architecto sequi vitae atque odio asperiores. Eos, sit. Maxime,
-      beatae cum!
-    </p>
-    <p>
-      Dolores dolor ullam tenetur impedit debitis quis accusantium quos maxime
-      enim! Temporibus veritatis accusamus non consequuntur cum cumque, vitae
-      hic voluptatem doloribus nesciunt maxime porro est nemo harum mollitia
-      aut?
-    </p>
-    <p>
-      Ab molestiae voluptates vero ea dolorem, autem libero pariatur, accusamus
-      modi mollitia adipisci officia harum voluptas! Quibusdam aliquam, illo
-      veritatis voluptatibus reprehenderit voluptas modi deleniti sed
-      perspiciatis temporibus ut laboriosam.
-    </p>
-    <p>
-      Corporis iure neque inventore eligendi velit deserunt rem natus nam vero
-      numquam quod, eaque quaerat animi accusamus ipsum illum placeat quas
-      voluptatum optio rerum quia. Voluptate tempora nam voluptas ab!
-    </p>
-    <p>
-      Quaerat veritatis amet laboriosam ad ea officia suscipit quia doloribus
-      impedit temporibus, perspiciatis veniam nulla saepe eius excepturi aliquid
-      reprehenderit inventore eos minus tempora totam nihil minima labore?
-      Obcaecati, molestias.
-    </p>
-    <p>
-      Sed ad aspernatur placeat nihil voluptatibus minus esse minima ut
-      explicabo dolorem autem obcaecati laboriosam quaerat provident fuga,
-      consequuntur natus magnam voluptate sapiente repellendus tenetur
-      molestias. Repellat ab veritatis hic?
-    </p>
-    <p>
-      Nesciunt reprehenderit molestiae quas exercitationem doloremque accusamus
-      maxime ducimus animi numquam quidem magni beatae et nemo laudantium
-      dignissimos, minima esse perspiciatis nostrum repellat consequatur
-      voluptatum praesentium porro eos eveniet. Consectetur!
-    </p>
-    <p>
-      Ut officiis consectetur aspernatur ratione nisi perferendis tempora
-      deleniti fugit culpa veniam possimus dolorum iure iusto, earum cum
-      adipisci nam ullam distinctio neque provident! Ex error enim natus
-      corporis minima.
-    </p>
-    <p>
-      Rem quidem dignissimos nisi ipsam dolore perferendis eveniet esse iste
-      ullam inventore, nemo porro facere pariatur? Fugiat maxime, molestias ea
-      aperiam architecto officia ducimus. Voluptates tenetur doloribus quibusdam
-      porro omnis.
-    </p>
-    <p>
-      Alias qui totam dolorem nulla ut magnam eaque modi debitis autem quasi ex
-      quae asperiores, ipsum quo laboriosam soluta odio officiis repellendus
-      quos quidem perferendis velit ipsa. Repellendus, consequatur explicabo.
-    </p>
-    <p>
-      Dolores nesciunt iure, voluptatibus officiis saepe hic nam accusantium eos
-      asperiores recusandae minus quam provident. Placeat praesentium eveniet
-      aliquid amet minima. Enim consectetur nisi velit id harum, modi voluptatem
-      beatae.
-    </p>
-    <p>
-      Eligendi eaque fugiat aliquid cumque dicta ducimus est qui repellendus
-      odit modi dignissimos quas sequi, labore facilis laudantium maxime tenetur
-      ullam? Corporis excepturi voluptatem perferendis enim accusantium libero
-      aperiam dolor?
-    </p>
-    <p>
-      Laborum, hic obcaecati molestiae modi ut enim qui a animi iste velit
-      exercitationem eligendi neque aut illo dicta magni excepturi debitis
-      necessitatibus doloremque esse maxime nulla accusamus! Eligendi, iusto ad.
-    </p>
-    <p>
-      Repellendus iure suscipit aliquid ducimus consectetur qui, commodi nostrum
-      accusantium laboriosam assumenda molestias facilis veniam, odio cum animi
-      quis eveniet! Alias consequatur animi officiis eveniet eaque eos sit
-      aliquam molestiae?
-    </p>
-    <p>
-      Nesciunt hic in provident voluptatibus optio perferendis, quidem sapiente
-      possimus, cum magni quisquam pariatur distinctio sequi dolore temporibus
-      repellendus deserunt nostrum incidunt rem ab minima voluptate, sint
-      excepturi. Sapiente, est?
-    </p>
-    <p>
-      Veritatis architecto impedit saepe recusandae delectus voluptas aperiam ut
-      ullam error, minus veniam provident necessitatibus! Exercitationem,
-      architecto! Eaque iste ad facilis tempora provident similique vitae
-      dolores neque cupiditate, obcaecati adipisci?
-    </p>
-    <p>
-      Aut dolorum, modi explicabo delectus labore temporibus fugiat placeat
-      totam corporis quasi magnam atque, dicta tempore ipsum hic expedita? Eos
-      corporis nulla aliquid deserunt, minima libero adipisci quas ipsum
-      aliquam.
-    </p>
+    <div class="cardTitleBox">
+      <p style="border-bottom: 5px; box-shadow: 0 1px; width: 15cm">
+        <span class="cardTitle">限時特價</span>
+        <span class="cardSubTitle">即將成團！限時特價！錯過就不再</span>
+      </p>
+    </div>
+    <cardList card-type="countdownCard" :data="countdownData" />
+  </div>
+  <!-- 兌換好禮cardList -->
+  <div>
+    <div class="cardTitleBox">
+      <p style="border-bottom: 5px; box-shadow: 0 1px; width: 15cm">
+        <span class="cardTitle">好禮兌換</span>
+        <span class="cardSubTitle">綠能點數兌換好禮，綠色生活陪伴你！</span>
+      </p>
+    </div>
+    <cardList card-type="pointCard" :data="pointData" />
   </div>
 </template>
 
@@ -240,7 +139,8 @@ import cardList from "./cardList.vue";
   height: 480px;
 }
 .cardTitleBox {
-  margin-left: 250px;
+  /* margin-left: 250px; */
+  margin-left: calc(15%);
 }
 .cardTitle {
   font-family: "Inter";

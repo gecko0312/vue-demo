@@ -10,6 +10,12 @@ const router = createRouter({
       // component: HomeView
       component: () => import("../views/home.vue"),
     },
+    {
+      path: "/gemini",
+      name: "gemini",
+      // component: HomeView
+      component: () => import("../views/gemini/Gemini.vue"),
+    },
     // {
     //   path: '/about',
     //   name: 'about',

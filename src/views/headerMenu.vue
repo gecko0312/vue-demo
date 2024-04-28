@@ -25,8 +25,8 @@
         </button>
         <div class="collapse navbar-collapse menuBox" id="navbarNavAltMarkup">
           <div class="navbar-nav menu_optionBox">
-            <a class="nav-link active" aria-current="page" href="#"
-              ><span class="menu_text">建立提案</span></a
+            <RouterLink class="nav-link active" aria-current="page" to="/gemini"
+              ><span class="menu_text">建立提案</span></RouterLink
             >
             <a class="nav-link" href="#"
               ><span class="menu_text">全部旅程規劃</span></a
@@ -47,11 +47,12 @@
 <style>
 /* header_style */
 header {
-  /* position: fixed; */
+  position: fixed;
   width: 100%;
   height: 70px;
   left: 0px;
   top: 0px;
+  z-index: 10;
 }
 .headerBox {
   padding: 0% 20%;
