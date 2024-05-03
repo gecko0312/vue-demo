@@ -58,7 +58,7 @@ function dateCountdown() {
   // console.log(newDate);
   // console.log(finalDate);
   // console.log("秒差：" + differenceSec);
-  console.log(time);
+  // console.log(time);
 }
 
 // 換算時間函式

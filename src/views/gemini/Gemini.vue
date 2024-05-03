@@ -1,3 +1,27 @@
+<script setup>
+import { ref } from "vue";
+import { useGetGenerativeModelGP } from "./useGetGenerativeModelGP.js";
+import AIAnswer from "./Answer.vue";
+
+const question = ref("");
+const answer = ref("");
+const isLoading = ref(false);
+
+const fetchAnswer = async () => {
+  answer.value = "";
+  isLoading.value = true;
+
+  try {
+    answer.value = await useGetGenerativeModelGP(question.value);
+  } catch (error) {
+    console.log({ error });
+  } finally {
+    isLoading.value = false;
+    question.value = "";
+  }
+};
+</script>
+
 <template>
   <div>
     <h1 class="mb-5">Hello i'm Gemini AI, ask me anything</h1>
@@ -22,30 +46,6 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { ref } from "vue";
-import { useGetGenerativeModelGP } from "./useGetGenerativeModelGP.js";
-import AIAnswer from "./Answer.vue";
-
-const question = ref("");
-const answer = ref("");
-const isLoading = ref(false);
-
-const fetchAnswer = async () => {
-  answer.value = "";
-  isLoading.value = true;
-
-  try {
-    answer.value = await useGetGenerativeModelGP(question.value);
-  } catch (error) {
-    console.log({ error });
-  } finally {
-    isLoading.value = false;
-    question.value = "";
-  }
-};
-</script>
 
 <style lang="scss" scoped>
 .mb-5 {

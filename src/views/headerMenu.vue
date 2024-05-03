@@ -2,7 +2,7 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container-fluid headerBox">
-        <a class="navbar-brand icon_box" href="#"
+        <RouterLink class="navbar-brand icon_box" to="/"
           ><img
             class="icon_img"
             src="../components/icons/綠能旅遊icon.png"
@@ -11,7 +11,7 @@
           <span class="icon_title_box">
             <span class="icon_title_text">綠能旅遊</span>
           </span>
-        </a>
+        </RouterLink>
         <button
           class="navbar-toggler"
           type="button"
@@ -28,14 +28,14 @@
             <RouterLink class="nav-link active" aria-current="page" to="/gemini"
               ><span class="menu_text">建立提案</span></RouterLink
             >
-            <a class="nav-link" href="#"
-              ><span class="menu_text">全部旅程規劃</span></a
+            <RouterLink class="nav-link" to="#"
+              ><span class="menu_text">全部旅程規劃</span></RouterLink
             >
-            <a class="nav-link" href="#"
-              ><span class="menu_text">企業聯絡</span></a
+            <RouterLink class="nav-link" to="/aboutOur"
+              ><span class="menu_text">企業聯絡</span></RouterLink
             >
-            <a class="nav-link" href="#"
-              ><span class="menu_text">登入/註冊</span></a
+            <RouterLink class="nav-link" to="/login"
+              ><span class="menu_text">登入/註冊</span></RouterLink
             >
           </div>
         </div>
