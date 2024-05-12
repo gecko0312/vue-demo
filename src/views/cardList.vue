@@ -42,42 +42,6 @@ function backCard() {
   cardList.value.style.scrollBehavior = "smooth";
   cardList.value.scrollLeft -= 900;
 }
-
-// 倒數計時器
-let timerId = setInterval(dateCountdown, 1000);
-let time = ref("");
-function dateCountdown() {
-  const newDate = new Date();
-  const finalDate = new Date("2024/05/01 09:50:00");
-  const differenceSec = Math.round((finalDate - newDate) / 1000);
-  time.value = timeRenderer(differenceSec);
-
-  if (differenceSec <= 0) {
-    clearInterval(timerId);
-  }
-  // console.log(newDate);
-  // console.log(finalDate);
-  // console.log("秒差：" + differenceSec);
-  // console.log(time);
-}
-
-// 換算時間函式
-function timeRenderer(seconds) {
-  let sec = seconds % 60;
-  sec = sec < 10 ? "0" + sec : "" + sec;
-  let hour = Math.floor(seconds / 60 / 60);
-  hour = hour < 10 ? "0" + hour : "" + hour;
-  let min = 0;
-  if (hour > 0) {
-    min = Math.floor(seconds / 60 - hour * 60);
-    min = min < 10 ? "0" + min : "" + min;
-  } else {
-    min = Math.floor(seconds / 60);
-    min = min < 10 ? "0" + min : "" + min;
-  }
-  const time = hour + ":" + min + ":" + sec;
-  return time;
-}
 </script>
 
 <template>
@@ -93,40 +57,61 @@ function timeRenderer(seconds) {
         <div v-for="iteam in props.data" class="cardBox" :key="iteam.id">
           <div class="card text-center" style="width: 250px">
             <img
-              src="../components/image/花蓮.jpg"
+              src="@/components/image/白沙灣.jpg"
               class="card-img-top"
               alt="..."
             />
             <div class="card-body" :style="cardBody">
-              <h5 class="card-title">{{ iteam.title }}</h5>
+              <div class="card-title">{{ iteam.title }}</div>
               <!-- travel_Type_card -->
               <div v-if="travelType">
                 <div class="card-text">
-                  <div>{{ iteam.content }}</div>
-                  <div>目前三團人數：{{ iteam.current }}</div>
-                  <div>最高參與人數：{{ iteam.max }}</div>
-                  <div>
-                    滿{{ iteam.discountNumber }}人立減{{ iteam.discountMoney }}
+                  <div class="travelContent">{{ iteam.content }}</div>
+                  <div class="travelDataText">
+                    目前三團人數：{{ iteam.current }}
                   </div>
-                  <!-- <br />
-                {{ time }} -->
+                  <div class="travelDataText">
+                    最高參與人數：{{ iteam.max }}
+                  </div>
+                  <div class="travelDataText">
+                    滿
+                    <span style="color: red">{{ iteam.discountNumber }}</span>
+                    人立減
+                    <span style="color: yellow">{{ iteam.discountMoney }}</span>
+                  </div>
                 </div>
-                <a href="#" class="btn btn-primary">買上參加</a>
+                <a href="#" class="btn btn-primary travelBtn">馬上參加</a>
               </div>
               <!-- countdown_Type_card -->
               <div v-if="countdownType">
                 <div class="card-text">
-                  <div>finData:{{ iteam.finDate }}</div>
-                  <div>目前價錢：{{ iteam.nowPrice }}</div>
-                  <div>原價：{{ iteam.originalPrice }}</div>
+                  <div class="countdownContent">
+                    <i class="bi bi-alarm"></i>
+                    距離優惠結束
+                  </div>
+                  <div class="countdownContent">
+                    剩下
+                    <span class="finDate"> {{ iteam.finDate }} </span>
+                    天
+                  </div>
                 </div>
-                <a href="#" class="btn btn-primary">買上參加</a>
+                <div class="countdown_downBox">
+                  <div class="moenyBox">
+                    <div>
+                      <span class="nowPrice"> TWD {{ iteam.nowPrice }} </span>
+                    </div>
+                    <div class="orgPrice">TWD {{ iteam.originalPrice }}</div>
+                  </div>
+                  <a href="#" class="btn btn-primary countdownBtn">馬上參加</a>
+                </div>
               </div>
               <!-- point_Type_card -->
               <div v-if="pointType">
                 <div class="card-text">
-                  <div>content：{{ iteam.content }}</div>
-                  <a href="#" class="btn btn-primary">買上參加</a>
+                  <div class="pointContent">
+                    {{ iteam.content }}
+                  </div>
+                  <a href="#" class="btn btn-primary pointBtn">馬上參加</a>
                 </div>
               </div>
             </div>
@@ -160,6 +145,76 @@ function timeRenderer(seconds) {
 }
 .cardBox {
   margin: 0px 5px;
+}
+.card-body {
+  padding: 0px;
+}
+.card-title {
+  /* border: 1px solid; */
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 25px;
+  margin-top: 0px;
+}
+.travelContent,
+.pointContent {
+  margin: 0px auto 10px;
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  /* border: 1px solid; */
+  max-width: calc(50% + 50px);
+}
+.travelDataText {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+}
+.travelBtn,
+.countdownBtn,
+.pointBtn {
+  margin: 10px auto;
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+}
+.countdownContent:first-child {
+  color: #000000;
+}
+.countdownContent {
+  margin: 10px auto;
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 36px;
+  text-align: center;
+  color: red;
+}
+.finDate {
+  font-size: 50px;
+}
+.countdown_downBox {
+  display: flex;
+}
+.nowPrice {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  color: #67ebac;
+}
+.orgPrice {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: center;
+  text-decoration-line: line-through;
+  color: #000000;
 }
 .controlCardListBtn:first-of-type {
   left: -25px;

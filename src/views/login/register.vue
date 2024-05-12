@@ -2,8 +2,8 @@
 import headerMenu from "../headerMenu.vue";
 import { useRouter } from "vue-router";
 const router = useRouter();
-function goRegister2() {
-  router.push({ path: "/register2" });
+function goRegister_sec() {
+  router.push({ path: "/register_sec" });
 }
 </script>
 
@@ -79,7 +79,7 @@ function goRegister2() {
         <!-- 第六列 -->
         <div class="row">
           <div class="col-sm-12">
-            <button @click="goRegister2()">驗證並註冊</button>
+            <button @click="goRegister_sec()">驗證並註冊</button>
           </div>
         </div>
       </form>
@@ -88,10 +88,6 @@ function goRegister2() {
 </template>
 
 <style scoped>
-.container div {
-  /* border: 0.5px solid; */
-}
-
 .container {
   max-width: 600px;
   margin: 120px auto;

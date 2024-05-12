@@ -28,7 +28,7 @@
             <RouterLink class="nav-link active" aria-current="page" to="/gemini"
               ><span class="menu_text">建立提案</span></RouterLink
             >
-            <RouterLink class="nav-link" to="#"
+            <RouterLink class="nav-link" to="/allTravel"
               ><span class="menu_text">全部旅程規劃</span></RouterLink
             >
             <RouterLink class="nav-link" to="/aboutOur"
@@ -62,6 +62,7 @@ header {
   height: 70px;
   left: 0px;
   top: 0px;
+  /* min-width: 1000px; */
 }
 .navbar {
   background-color: #67ebac;
