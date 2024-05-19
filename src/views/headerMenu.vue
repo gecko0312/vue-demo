@@ -1,3 +1,16 @@
+<script setup>
+import { ref } from "vue";
+import { useTokenStore } from "@/stores/token.js";
+
+const store = useTokenStore();
+const haveLogin = ref(false);
+if (!store.token == "") {
+  haveLogin.value = true;
+} else {
+  haveLogin.value = false;
+}
+</script>
+
 <template>
   <header>
     <nav class="navbar navbar-expand-lg navbar-light">
@@ -34,9 +47,14 @@
             <RouterLink class="nav-link" to="/aboutOur"
               ><span class="menu_text">企業聯絡</span></RouterLink
             >
-            <RouterLink class="nav-link" to="/login"
+            <RouterLink class="nav-link" to="/login" v-if="!haveLogin"
               ><span class="menu_text">登入/註冊</span></RouterLink
             >
+            <RouterLink class="nav-link" to="/userView" v-if="haveLogin">
+              <img
+                src="https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png"
+                class="user_img"
+            /></RouterLink>
           </div>
         </div>
       </div>
@@ -113,5 +131,9 @@ header {
   font-weight: 350;
   font-size: 30px;
   color: #000000;
+}
+.user_img {
+  width: 50px;
+  border-radius: 50%;
 }
 </style>

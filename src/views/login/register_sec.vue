@@ -12,24 +12,7 @@ function goHome() {
   <div class="container">
     <h2>歡迎加入綠能勇士！</h2>
     <hr />
-    <!-- 第一列 -->
-    <div class="row">
-      <div class="col-sm-12">
-        <label>請輸入您的姓名：</label>
-        <input
-          type="text"
-          placeholder="請輸入您的姓名"
-          class="form-contorl long-text"
-        />
-      </div>
-    </div>
-    <!-- 第二列 -->
-    <div class="row">
-      <div class="col-sm-12">
-        <label>請輸入您的生日：</label><br />
-        <input type="date" class="inputDate" />
-      </div>
-    </div>
+
     <!-- 第三列 -->
     <div class="row">
       <div class="col-sm-12">

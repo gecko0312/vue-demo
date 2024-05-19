@@ -1,10 +1,33 @@
 <script setup>
+import { ref } from "vue";
 import headerMenu from "../headerMenu.vue";
+import axios from "axios";
 import { useRouter } from "vue-router";
 const router = useRouter();
-function goRegister_sec() {
-  router.push({ path: "/register_sec" });
-}
+
+const name = ref("");
+const birthday = ref("");
+const phone = ref("");
+const mail = ref("");
+const password = ref("");
+
+const register = () => {
+  axios
+    .post("http://localhost:3000/user", {
+      name: name.value,
+      mail: mail.value,
+      birthday: birthday.value,
+      phone: phone.value,
+      password: password.value,
+    })
+    .then((res) => {
+      alert("註冊成功");
+      router.push({ path: "/login" });
+    })
+    .catch((error) => {
+      alert("註冊失敗");
+    });
+};
 </script>
 
 <template>
@@ -16,16 +39,45 @@ function goRegister_sec() {
       <form action="">
         <!-- 第一列 -->
         <div class="row">
+          <div class="col-sm-6">
+            <label>請輸入您的姓名：</label>
+            <input
+              type="text"
+              placeholder="請輸入您的姓名"
+              class="form-contorl long-text"
+              v-model="name"
+            />
+          </div>
+          <div class="col-sm-4">
+            <label>請輸入您的生日：</label><br />
+            <input type="date" class="inputDate" v-model="birthday" />
+          </div>
+        </div>
+        <!-- 第二列 -->
+        <div class="row">
+          <div class="col-sm-12"><label>請輸入手機號碼：</label></div>
+          <div class="col-sm-2 selectBox">
+            <select name="conutry-code" id="conutry-code">
+              <option value="+886">+886</option>
+            </select>
+          </div>
+          <div class="col-sm-7 phoneBox">
+            <input type="text" class="form-contorl" v-model="phone" />
+          </div>
+        </div>
+        <!-- 第三列 -->
+        <div class="row">
           <div class="col-sm-12">
             <label>請輸入電子郵件信箱：</label>
             <input
               type="text"
               placeholder="電子郵件信箱"
               class="form-contorl"
+              v-model="mail"
             />
           </div>
         </div>
-        <!-- 第二列 -->
+        <!-- 第四列 -->
         <div class="row">
           <div class="col-sm-12">
             <label>請輸入密碼：</label>
@@ -33,10 +85,11 @@ function goRegister_sec() {
               type="password"
               placeholder="請輸入密碼"
               class="form-contorl"
+              v-model="password"
             />
           </div>
         </div>
-        <!-- 第三列 -->
+        <!-- 第五列 -->
         <div class="row">
           <div class="col-sm-12">
             <label>確認密碼：</label>
@@ -47,39 +100,23 @@ function goRegister_sec() {
             />
           </div>
         </div>
-        <!-- 第四列 -->
-        <div class="row">
-          <div class="col-sm-12"><label>請輸入手機號碼：</label></div>
-
-          <div class="col-sm-2 selectBox">
-            <select name="conutry-code" id="conutry-code">
-              <option value="+886">+886</option>
-            </select>
-          </div>
-          <div class="col-sm-7 phoneBox">
-            <input type="text" class="form-contorl" />
-          </div>
-          <div class="col-sm-3">
-            <button>發送驗證碼</button>
-          </div>
-        </div>
-        <!-- 第五列 -->
-        <div class="row">
-          <label>請輸入驗證碼：</label>
-          <div class="col-sm-2">
-            <input type="text" class="form-contorl small-text" />
-          </div>
-          <div class="col-sm-10">
-            <div class="moveBox">
-              <label> 沒有收到驗證碼嗎？</label>
-              <button>重新發送驗證碼</button>
-            </div>
-          </div>
-        </div>
         <!-- 第六列 -->
+        <div class="box">
+          <input type="checkbox" id="c1" required />
+          <span
+            >我同意<a href="#" onclick="openModal(); return false;"
+              >使用者條款</a
+            ></span
+          ><br />
+          <input type="checkbox" id="c2" />
+          <span
+            >是的，我願意收到綠能旅遊公司及受託代銷等各合作廠商之商品或服務等好康優惠訊息，並接收綠能旅遊公司關係企業專屬活動電子報的寄送</span
+          >
+        </div>
+        <!-- 第七列 -->
         <div class="row">
           <div class="col-sm-12">
-            <button @click="goRegister_sec()">驗證並註冊</button>
+            <button @click.prevent="" @click="register">完成註冊</button>
           </div>
         </div>
       </form>
@@ -112,6 +149,9 @@ input {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+input[type="checkbox"] {
+  width: auto;
+}
 .selectBox {
   display: flex;
   justify-content: center;
@@ -124,10 +164,7 @@ button {
   border-radius: 4px;
   cursor: pointer;
 }
-.small-text {
-  width: 100px;
-}
-.moveBox {
-  margin-left: 10px;
+.box {
+  margin: 20px 0px;
 }
 </style>

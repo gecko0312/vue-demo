@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
 // import HomeView from '../views/HomeView.vue'
-import register_sec from "@/views/login/register_sec.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -43,18 +42,17 @@ const router = createRouter({
       component: () => import("../views/login/register.vue"),
     },
     {
-      // 註冊2
-      path: "/register_sec",
-      name: "register_sec",
-      component: register_sec,
-    },
-    {
-      // 註冊2
+      // 全部旅程規劃
       path: "/allTravel",
       name: "allTravel",
       component: () => import("../views/allTravel.vue"),
     },
-
+    {
+      // 會員頁面
+      path: "/userView",
+      name: "userView",
+      component: () => import("../views/userView.vue"),
+    },
     // {
     //   path: '/about',
     //   name: 'about',

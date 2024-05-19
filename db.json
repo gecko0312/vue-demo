@@ -1,0 +1,12 @@
+{
+  "user": [
+    {
+      "id": "0dc1",
+      "name": "user1",
+      "mail": "123@gmail.com",
+      "birthday": "2024-05-19",
+      "phone": "0912123456",
+      "password": "1234"
+    }
+  ]
+}
