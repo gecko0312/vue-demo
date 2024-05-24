@@ -1,5 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
 // import HomeView from '../views/HomeView.vue'
+import underReviewItem from "@/views/user/underReviewItem.vue";
+import audited from "@/views/user/audited.vue";
+import checkOut from "@/views/travelView/checkOut.vue";
+import gemini from "@/views/gemini/Gemini.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -15,7 +19,7 @@ const router = createRouter({
       // 建立提案(gemini機器人)
       path: "/gemini",
       name: "gemini",
-      component: () => import("../views/gemini/Gemini.vue"),
+      component: gemini,
     },
     {
       // 關於我們
@@ -51,7 +55,40 @@ const router = createRouter({
       // 會員頁面
       path: "/userView",
       name: "userView",
-      component: () => import("../views/userView.vue"),
+      component: () => import("../views/user/userView.vue"),
+    },
+    {
+      // 提案紀錄
+      path: "/proposalRecord",
+      name: "proposalRecord",
+      component: () => import("../views/user/proposalRecord.vue"),
+      children: [
+        {
+          path: "underReviewItem",
+          component: underReviewItem,
+        },
+        {
+          path: "audited",
+          component: audited,
+        },
+      ],
+    },
+    {
+      // 旅程報名
+      path: "/signUp",
+      name: "signUp",
+      component: () => import("../views/travelView/signUp.vue"),
+    },
+    {
+      path: "/checkOut",
+      name: "checkOut",
+      component: checkOut,
+    },
+    {
+      // 測試
+      path: "/test",
+      name: "test",
+      component: () => import("../views/test.vue"),
     },
     // {
     //   path: '/about',

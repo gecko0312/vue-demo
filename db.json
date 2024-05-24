@@ -8,5 +8,166 @@
       "phone": "0912123456",
       "password": "1234"
     }
+  ],
+  "travelProposal": [],
+  "travelData": [
+    {
+      "id": 1,
+      "title": "花蓮出發．四人成行",
+      "max": 36,
+      "current": 24,
+      "content": "電動單車，暢遊花蓮",
+      "discountNumber": 20,
+      "discountMoney": 400,
+      "title_img": "https://cdn.discordapp.com/attachments/1172885341980602439/1243531807476158574/78d19a01d54aded4.jpg?ex=6651d0be&is=66507f3e&hm=b2babd4f63f15bc5c2c841d0c447188c2fb1af654cffd24d32b04d3f9835d3e4&",
+      "first_journey_title": "兩潭自行車道",
+      "first_journey_data": "位於花蓮的兩潭自行車步道，其單車路線是由七星潭和鯉魚潭兩條路線所含括串聯，自行車道總長大約46多公里，自行車道平坦易行，且沿途可欣賞豐富又多元的山海、溼地及田園景觀，像是七星潭風景區、賞星廣場、四八高地、花蓮港區、南濱公園、中華紙漿場、舊鐵道、木瓜溪橋、宏卿山莊及鯉魚潭風景區等，騎乘單車遨遊其中，是絕佳的視覺與休閒饗宴。",
+      "first_journey_img": "https://tour-hualien-ws.hl.gov.tw/001/Upload/435/relpic/12302/1523/8340b522-8005-4802-9483-c96a1e9a7882.jpg",
+      "sec_journey_title": "臨港線",
+      "sec_journey_data": "來到花蓮玩，除了走訪大山大海特色景致外，也特別到花蓮港街發展歷程的太平洋臨海鐵道，雖然鐵道已改為自行車道，但重要的歷史軌跡仍然存在，現在就讓我們藉由電輔車深度遊覽，聽聽昔日的故事，想像當年的風華絕代。",
+      "sec_journey_img": "https://takao-aws.hmgcdn.com/public/article/a0/209/atl_209_20191009093021_798.jpg",
+      "third_journey_title": "向日廣場",
+      "third_journey_data": "「向日廣場」座落於花蓮漁港，四周被太平洋、賞鯨碼頭、花蓮漁市場及花蓮區漁會所環抱，這裡是太平洋第一道曙光灑落之地，也是「向日」廣場的由來。向日廣場的建築呈現是南歐風格與旁邊的漁港成為強烈的對比，中西方的海岸文化特色在此交融，彼此間產生燦爛的火花，加上旁邊又有太平洋及大草原的襯托，實在是難得一見的美景。",
+      "third_journey_img": "https://tour-hualien-ws.hl.gov.tw/001/Upload/435/relpic/12302/1219/d3e7c3df-7e4d-432f-8612-d2e14119579c.png",
+      "go_date": "2024/07/14(日)",
+      "back_date": "2024/07/17(三)",
+      "days": 4,
+      "original_price": 15000,
+      "createDate": "2024/06/20",
+      "createTime": "08:32 pm",
+      "data": "行程時間表（詳細版）： 第 1 天 早上 8:00：從台北出發前往花蓮 中午 12:00：抵達花蓮，入住飯店 下午 1:00：參觀太魯閣國家公園 燕子口步道（約 1 小時） 九曲洞（約 30 分鐘） 傍晚 5:00：返回飯店 晚上 6:00：晚餐（自理） 第 2 天 早上 8:00：早餐 早上 9:00：參觀七星潭風景區（約 1 小時） 中午 12:00：午餐（自理） 下午 1:00：前往鯉魚潭 環湖步道（約 1.5 小時） 鯉魚潭纜車（約 30 分鐘） 傍晚 5:00：返回飯店 晚上 6:00：晚餐（自理） 第 3 天 早上 8:00：早餐 早上 9:00：前往清水斷崖 健行步道（約 2 小時） 清水斷崖觀景台（約 30 分鐘） 中午 12:00：午餐（自理） 下午 1:00：參觀松園別館（約 1 小時） 傍晚 5:00：返回台北 晚上 9:00：抵達台北",
+      "travel_content": "洄瀾夢迴～電輔車．悠遊北濱公園．重溫舊時臨港時光．蔚藍七星潭．海闊天空花蓮半日遊 "
+    },
+    {
+      "id": 2,
+      "title": "白沙灣 三日遊",
+      "max": 40,
+      "current": 19,
+      "content": "白沙灣淨灘之旅",
+      "discountNumber": 10,
+      "discountMoney": 400,
+      "title_img": "https://cdn.discordapp.com/attachments/1172885341980602439/1243534527075319879/11eb98b3541316a1.jpg?ex=6651d347&is=665081c7&hm=7b12dc503445e42786b41b852be38d50f279dbc1e08417ca2a9b6715bc44ab1f&",
+      "travel_content": "三天兩夜暢遊白沙灣，享受陽光、沙灘與清澈海水，體驗浮潛、沙灘排球等活動，放鬆心情，盡情感受海島度假的美好時光。"
+    },
+    {
+      "id": 3,
+      "title": "高屏旅遊",
+      "max": 30,
+      "current": 19,
+      "content": "貓鼻頭.花海花旗木 ",
+      "discountNumber": 10,
+      "discountMoney": 800,
+      "title_img": "https://pgw.udn.com.tw/gw/photo.php?u=https://uc.udn.com.tw/photo/2022/03/11/realtime/16254531.jpg&x=0&y=0&sw=0&sh=0&sl=W&fw=800&exp=3600&w=930&nt=1",
+      "travel_content": "高屏旅遊三日遊，走訪貓鼻頭的壯麗海景，漫步於花海花旗木之中，欣賞繁花似錦的美景，感受自然與人文的完美結合。"
+    },
+    {
+      "id": 4,
+      "title": "新北旅遊",
+      "max": 37,
+      "current": 26,
+      "content": "乘平溪列車訪三貂嶺",
+      "discountNumber": 15,
+      "discountMoney": 400,
+      "title_img": "https://static.liontech.com.tw/cmspic/PIC2204-007644/M_PIC2204-007644.jpg",
+      "travel_content": "新北旅遊，乘坐平溪列車，探訪三貂嶺的自然美景，體驗沿途古樸小鎮的獨特風情，享受輕鬆悠閒的鐵道之旅。"
+    },
+    {
+      "id": 5,
+      "title": "基隆出發",
+      "max": 8,
+      "current": 3,
+      "content": "鹿兒島·那霸5日",
+      "discountNumber": 5,
+      "discountMoney": 3000,
+      "title_img": "https://static.liontech.com.tw/cmspic/PIC2306-000765/M_PIC2306-000765.jpg",
+      "travel_content": "從基隆啟程，展開5日的鹿兒島·那霸之旅，探索火山島魅力，品嚐異國美食，感受南島風情，讓旅程充滿驚喜與回憶。"
+    },
+    {
+      "id": 6,
+      "title": "桃園旅遊",
+      "max": 22,
+      "current": 8,
+      "content": "拉拉山神木步道",
+      "discountNumber": 5,
+      "discountMoney": 100,
+      "title_img": "https://static.liontech.com.tw/cmspic/PIC2010-012772/M_PIC2010-012772.jpg",
+      "travel_content": "漫步桃園的拉拉山神木步道，沉浸在古老神木的氛圍中，感受大自然的靜謐與美麗，享受清新空氣與綠意盎然的山間景致，放鬆心情，拋開煩囂。"
+    }
+  ],
+  "countdownData": [
+    {
+      "id": "countdown_1",
+      "title": "台東 山與海的邂逅",
+      "finDate": "1",
+      "nowPrice": 1580,
+      "originalPrice": 1990,
+      "title_img": "https://storage.googleapis.com/smiletaiwan-cms-cwg-tw/article/202401/article-659bd4d4cfa60.jpg",
+      "travel_content": "在台東，山與海相遇，帶您踏上一場壯麗之旅。徜徉於雄偉的山脈中，探索原始森林，然後漫步於風光旖旎的海岸線，沉醉於蔚藍海洋與潔白沙灘的美景中。"
+    },
+    {
+      "id": "countdown_2",
+      "title": "環島旅遊",
+      "finDate": "7",
+      "nowPrice": 24900,
+      "originalPrice": 27900,
+      "title_img": "https://static.liontech.com.tw/cmspic/PIC2404-001819/M_PIC2404-001819.JPG",
+      "travel_content": "展開環島旅遊，探索台灣的多樣風貌。從壯麗的山脈到迷人的海岸，從熱鬧的都市到寧靜的鄉村，體驗豐富的文化、美食與自然景觀，讓旅程充滿驚喜與難忘回憶。"
+    },
+    {
+      "id": "countdown_3",
+      "title": "賞金花~阿勃勒黃金雨",
+      "finDate": "9",
+      "nowPrice": 10999,
+      "originalPrice": 13999,
+      "title_img": "https://static.liontech.com.tw/cmspic/PIC2009-004912/M_PIC2009-004912.jpg",
+      "travel_content": "沉浸在賞金花與阿勃勒黃金雨的燦爛繽紛中，感受大自然的奇妙魅力。漫步花海，欣賞萬紫千紅，領略生命的繁盛與美好，讓心靈在花海中盡情綻放。"
+    },
+    {
+      "id": "countdown_4",
+      "title": "南高屏旅遊",
+      "finDate": "4",
+      "nowPrice": 5699,
+      "originalPrice": 5899,
+      "title_img": "https://static.liontech.com.tw/cmspic/PIC2109-005953/M_PIC2109-005953.jpg",
+      "travel_content": "南高屏旅遊，探索台灣南部的迷人風光。從高雄到屏東，沿途欣賞壯麗海岸線、豐富的文化遺產和美味的當地美食。體驗南部獨特的人情味與自然景觀，讓旅程充滿難忘的回憶。"
+    },
+    {
+      "id": "countdown_5",
+      "title": "澎湖花火節之旅",
+      "finDate": "3",
+      "nowPrice": 12900,
+      "originalPrice": 14900,
+      "title_img": "https://static.liontech.com.tw/cmspic/PIC2301-000369/M_PIC2301-000369.jpg",
+      "travel_content": ""
+    },
+    {
+      "id": "countdown_6",
+      "title": "屏東旅遊",
+      "finDate": "8",
+      "nowPrice": 3399,
+      "originalPrice": 5990,
+      "title_img": "https://static.liontech.com.tw/cmspic/PIC2312-001371/M_PIC2312-001371.JPG",
+      "travel_content": ""
+    }
+  ],
+  "pointData": [
+    {
+      "id": "pointData_1",
+      "title": "衝浪課程",
+      "content": "初學者也能輕鬆上手，體驗乘風破浪的快感！ 資深教練團隊指導 讓你快樂親水愛地球！",
+      "title_img": "https://www.surfschool.com.tw/data/course/cover/1584286686845841015.jpg"
+    },
+    {
+      "id": "pointData_2",
+      "title": "熱氣球體驗卷",
+      "content": "台東繽紛熱氣球 翱翔天際 欣賞絕美高山景觀 闔家同樂，歡樂一夏 立即兌換，搶先體驗！",
+      "title_img": "https://cdn.discordapp.com/attachments/1172885341980602439/1243548614459129906/3446af7e573c9cc4.jpg?ex=6651e065&is=66508ee5&hm=3c5474f14cae71237feb825d22b9dfbafb981c003a32e124455b8376cf892831&"
+    },
+    {
+      "id": "pointData_3",
+      "title": "武陵農場門票乙張",
+      "content": "台灣高山上的世外桃源 豐富的自然景觀 四季分明，景色優美 多樣果樹和蔬菜可賞可食 ",
+      "title_img": "https://res.klook.com/image/upload/c_fill,w_750,h_500/q_80/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/sjmd8c7o6cgzrhz6hiys.jpg"
+    }
   ]
 }

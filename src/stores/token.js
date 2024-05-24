@@ -7,7 +7,7 @@ export const useTokenStore = defineStore("token", () => {
   //   getter
   const token = computed(() => {
     try {
-      return tokenJson.value || window.localStorage.getItem("TokenInfo");
+      return tokenJson.value || window.localStorage.getItem("TokenInfo") || "f";
     } catch {
       alert("json格式錯誤");
       throw err;

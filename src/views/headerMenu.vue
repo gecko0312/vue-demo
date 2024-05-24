@@ -4,10 +4,10 @@ import { useTokenStore } from "@/stores/token.js";
 
 const store = useTokenStore();
 const haveLogin = ref(false);
-if (!store.token == "") {
-  haveLogin.value = true;
-} else {
+if (store.token == "f") {
   haveLogin.value = false;
+} else {
+  haveLogin.value = true;
 }
 </script>
 

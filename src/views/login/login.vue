@@ -22,7 +22,6 @@ const login = () => {
         (password.value == res.data[0].password)
       ) {
         store.saveToken(res.data[0].id);
-        // console.log(test);
         alert("登入成功");
         router.push({ path: "/" });
       } else {

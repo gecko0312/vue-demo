@@ -1,31 +1,23 @@
 <script setup>
 import { ref } from "vue";
 import headerMenu from "./headerMenu.vue";
+import axios from "axios";
+
 const searchResultText = ref("");
 const date = ref("");
+const data = ref([]);
+const data_length = ref(data.value.length);
 
-const test_data = ref([]);
-
-for (let i = 1; i < 11; i++) {
-  test_data.value.push({
-    id: i,
-    title: "title" + i,
-    current: i,
-  });
-}
-
-const clickBtn = () => {
-  i++;
-  console.log(i);
-};
-const data_length = ref(test_data.value.length);
-console.log(data_length.value);
-
-const current_page = ref(1);
-const handleCurrentChange = (val) => {
-  console.log("current page:" + val);
-  current_page.value = val;
-};
+axios.get("http://localhost:3000/travelData").then((res) => {
+  for (let i in res.data) {
+    data.value.push(res.data[i]);
+  }
+});
+axios.get("http://localhost:3000/countdownData").then((res) => {
+  for (let i = 0; i < 4; i++) {
+    data.value.push(res.data[i]);
+  }
+});
 </script>
 
 <template>
@@ -60,15 +52,21 @@ const handleCurrentChange = (val) => {
       <span class="searchResultText">{{ searchResultText }}</span>
     </div>
     <div class="cardBox">
-      <div v-for="iteam in test_data" class="card">
-        <img src="@/components/image/花蓮.jpg" class="card-img-top" alt="..." />
+      <div v-for="iteam in data" class="card">
+        <img
+          :src="iteam.title_img"
+          style="min-height: 200px"
+          class="card-img-top"
+          alt="..."
+        />
         <div class="card-body">
           <h5 class="card-title">{{ iteam.title }}</h5>
           <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            {{ iteam.travel_content }}
           </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <div class="aBox">
+            <a href="#" class="btn btn-primary">馬上參加</a>
+          </div>
         </div>
       </div>
       <div class="paginationBox">
@@ -138,9 +136,27 @@ input[type="text"] {
   margin: 10px auto 0px;
 }
 .card {
-  margin: 10px auto 0px;
+  margin: 10px 20px 0px;
   width: 280px;
   height: 450px;
+  background-color: antiquewhite;
+}
+.card-title {
+  margin-top: 5px;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 800;
+}
+.card-text {
+  /* border: 1px solid; */
+  margin-top: 5px;
+  text-align: center;
+  font-size: 15px;
+  min-height: 55%;
+}
+.aBox {
+  display: flex;
+  justify-content: center;
 }
 .paginationBox {
   display: flex;

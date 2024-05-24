@@ -7,14 +7,13 @@ import { useRouter } from "vue-router";
 
 const store = useTokenStore();
 const userData = ref({});
-const format = (percentage) => (percentage === 120 ? "Full" : `${percentage}%`);
 axios.get(`http://localhost:3000/user?${store.token}`).then((res) => {
   userData.value = res.data[0];
   console.log(userData.value);
 });
 
 function logout() {
-  store.saveToken("");
+  store.saveToken("f");
 }
 </script>
 
@@ -36,9 +35,15 @@ function logout() {
       </div>
       <!-- 左下 -->
       <div class="iteamBlock">
-        <div class="iteamOption">會員帳號管理</div>
-        <div class="iteamOption">會員訂單查詢</div>
-        <div class="iteamOption">歷史提案紀錄</div>
+        <RouterLink to="#"
+          ><div class="iteamOption">會員帳號管理</div>
+        </RouterLink>
+        <RouterLink to="#">
+          <div class="iteamOption">會員訂單查詢</div>
+        </RouterLink>
+        <RouterLink to="/proposalRecord/underReviewItem">
+          <div class="iteamOption">提案紀錄</div>
+        </RouterLink>
         <RouterLink to="/"
           ><div class="iteamOption" @click="logout">登出</div></RouterLink
         >
@@ -52,28 +57,28 @@ function logout() {
         <hr />
         <div class="level">目前會員等級：一般會員</div>
         <div class="point">消費里程數累積：4436</div>
-        <el-progress :percentage="60" />
+        <el-progress :percentage="87" :stroke-width="20" color="#FFE871" />
         <div class="greenPointBox">
           <div class="greenPoint">綠能點數累積：300點</div>
-          <button>前往好禮兌換</button>
+          <button class="greenPointBtn">前往好禮兌換</button>
         </div>
         <div class="row">
           <div class="col-sm-6">
-            會員姓名
+            <span class="userDataTitle">會員姓名</span>
             <div class="userData">{{ userData.name }}</div>
           </div>
           <div class="col-sm-6">
-            生日
+            <span class="userDataTitle">生日</span>
             <div class="userData">{{ userData.birthday }}</div>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-6">
-            聯絡E-mail
+            <span class="userDataTitle">聯絡E-mail</span>
             <div class="userData">{{ userData.mail }}</div>
           </div>
           <div class="col-sm-6">
-            聯絡手機
+            <span class="userDataTitle">聯絡手機</span>
             <div class="userData">{{ userData.phone }}</div>
           </div>
         </div>
@@ -91,7 +96,7 @@ div {
   margin: 100px auto;
   padding: 10px;
   display: flex;
-  border: 1px solid;
+  /* border: 1px solid; */
 }
 .userImgBlock,
 .iteamBlock {
@@ -118,7 +123,7 @@ div {
   text-align: center;
 }
 .userName {
-  font-size: 20px;
+  font-size: 25px;
 }
 /* 左下 */
 .iteamBlock {
@@ -130,11 +135,15 @@ div {
   text-align: center;
   font-size: 30px;
 }
+a {
+  color: #000;
+  text-decoration: none;
+}
 /* 右 */
 .userData_main {
   width: 1130px;
   margin: 10px 5px;
-  padding: 10px;
+  padding: 20px;
   border-radius: 10px;
   background-color: white;
 }
@@ -144,9 +153,34 @@ div {
 hr {
   border: 1px solid #000;
 }
-
+.level,
+.point {
+  margin: 10px auto;
+  font-size: 20px;
+}
+.level {
+  font-weight: 800;
+}
+.el-progress {
+  margin: 25px auto;
+}
 .greenPointBox {
+  margin: 20px auto;
   display: flex;
+}
+.greenPoint {
+  font-size: 30px;
+}
+.greenPointBtn {
+  margin: 0px 20px;
+  background: #67ebac;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.userDataTitle {
+  font-size: 25px;
+  font-weight: 500;
 }
 .userData {
   padding: 5px;

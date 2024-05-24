@@ -5,68 +5,60 @@ import firstImg from "../components/image/白沙灣.jpg";
 import secondImg from "../components/image/花蓮.jpg";
 import thirdtImg from "../components/image/風景.jpg";
 import cardList from "./cardList.vue";
+import axios from "axios";
+
 // 生測試資料
-const travelData = ref([
-  {
-    id: 1,
-    title: "data1_title",
-    max: 36,
-    current: 24, //當前人數
-    content: "data1_content", //內容
-    discountNumber: 20, //滿 20人
-    discountMoney: 400, //減400元
-    img: "@/components/image/白沙灣.jpg",
-  },
-]);
-const countdownData = ref([
-  {
-    id: "countdown_1",
-    title: "countdown1_tilte",
-    finDate: "1",
-    nowPrice: 1580,
-    originalPrice: 1990,
-    img: "@/components/image/白沙灣.jpg",
-  },
-]);
+const travelData = ref([]);
+const countdownData = ref([]);
 const date = ref("");
-const pointData = ref([
-  {
-    id: "pointData_1",
-    title: "point1_tilte",
-    content: "pointData1_content",
-    img: "@/components/image/白沙灣.jpg",
-  },
-]);
+const pointData = ref([]);
 
-for (let i = 2; i < 11; i++) {
-  travelData.value.push({
-    id: i,
-    title: "data" + i + "_title",
-    max: Math.floor(Math.random() * 100 + 1),
-    current: Math.floor(Math.random() * 100 + 1),
-    content: "data" + i + "_content",
-    discountNumber: Math.floor(Math.random() * 30 + 1),
-    discountMoney: Math.floor(Math.random() * 1000 + 200),
-    img: "@/components/image/白沙灣.jpg",
-  });
+axios.get("http://localhost:3000/travelData").then((res) => {
+  for (let i in res.data) {
+    travelData.value.push(res.data[i]);
+  }
+});
+axios.get("http://localhost:3000/countdownData").then((res) => {
+  for (let i in res.data) {
+    countdownData.value.push(res.data[i]);
+  }
+});
+axios.get("http://localhost:3000/pointData").then((res) => {
+  for (let i in res.data) {
+    pointData.value.push(res.data[i]);
+  }
+});
+// for (let i = 2; i < 11; i++) {
 
-  date.value = i < 10 ? "0" + i : "" + i;
-  countdownData.value.push({
-    id: "countdown_" + i,
-    title: "countdown" + i + "_tilte",
-    finDate: Math.floor(Math.random() * 9 + 1),
-    nowPrice: Math.floor(Math.random() * 1000 + 100) * 10,
-    originalPrice: Math.floor(Math.random() * 1000 + 100) * 10,
-    img: "@/components/image/白沙灣.jpg",
-  });
+// travelData.value.push({
+//   id: i,
+//   title: "data" + i + "_title",
+//   max: Math.floor(Math.random() * 100 + 1),
+//   current: Math.floor(Math.random() * 100 + 1),
+//   content: "data" + i + "_content",
+//   discountNumber: Math.floor(Math.random() * 30 + 1),
+//   discountMoney: Math.floor(Math.random() * 1000 + 200),
+//   img: "@/components/image/白沙灣.jpg",
+// });
 
-  pointData.value.push({
-    id: "pointData_" + i,
-    title: "point" + i + "_tilte",
-    content: "pointData" + i + "_content",
-    img: "@/components/image/白沙灣.jpg",
-  });
-}
+// date.value = i < 10 ? "0" + i : "" + i;
+// countdownData.value.push({
+//   id: "countdown_" + i,
+//   title: "countdown" + i + "_tilte",
+//   finDate: Math.floor(Math.random() * 9 + 1),
+//   nowPrice: Math.floor(Math.random() * 1000 + 100) * 10,
+//   originalPrice: Math.floor(Math.random() * 1000 + 100) * 10,
+//   img: "@/components/image/白沙灣.jpg",
+// });
+
+// pointData.value.push({
+//   id: "pointData_" + i,
+//   title: "point" + i + "_tilte",
+//   content: "pointData" + i + "_content",
+//   img: "@/components/image/白沙灣.jpg",
+// });
+// }
+// console.log(travelData.value);
 </script>
 
 <template>

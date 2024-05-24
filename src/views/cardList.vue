@@ -55,10 +55,11 @@ function backCard() {
       </button>
       <div class="cardList mx-auto" ref="cardList">
         <div v-for="iteam in props.data" class="cardBox" :key="iteam.id">
-          <div class="card text-center" style="width: 250px">
+          <div class="card text-center" style="width: 250px; min-height: 430px">
             <img
-              src="@/components/image/白沙灣.jpg"
+              :src="iteam.title_img"
               class="card-img-top"
+              style="min-height: 200px"
               alt="..."
             />
             <div class="card-body" :style="cardBody">
@@ -80,7 +81,9 @@ function backCard() {
                     <span style="color: yellow">{{ iteam.discountMoney }}</span>
                   </div>
                 </div>
-                <a href="#" class="btn btn-primary travelBtn">馬上參加</a>
+                <RouterLink to="/signUp" class="btn btn-primary travelBtn"
+                  >馬上參加</RouterLink
+                >
               </div>
               <!-- countdown_Type_card -->
               <div v-if="countdownType">
@@ -163,8 +166,7 @@ function backCard() {
   font-weight: 600;
   font-size: 20px;
   text-align: center;
-  /* border: 1px solid; */
-  max-width: calc(50% + 50px);
+  max-width: calc(50% + 60px);
 }
 .travelDataText {
   font-family: "Inter";
