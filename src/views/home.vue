@@ -28,37 +28,6 @@ axios.get("http://localhost:3000/pointData").then((res) => {
     pointData.value.push(res.data[i]);
   }
 });
-// for (let i = 2; i < 11; i++) {
-
-// travelData.value.push({
-//   id: i,
-//   title: "data" + i + "_title",
-//   max: Math.floor(Math.random() * 100 + 1),
-//   current: Math.floor(Math.random() * 100 + 1),
-//   content: "data" + i + "_content",
-//   discountNumber: Math.floor(Math.random() * 30 + 1),
-//   discountMoney: Math.floor(Math.random() * 1000 + 200),
-//   img: "@/components/image/白沙灣.jpg",
-// });
-
-// date.value = i < 10 ? "0" + i : "" + i;
-// countdownData.value.push({
-//   id: "countdown_" + i,
-//   title: "countdown" + i + "_tilte",
-//   finDate: Math.floor(Math.random() * 9 + 1),
-//   nowPrice: Math.floor(Math.random() * 1000 + 100) * 10,
-//   originalPrice: Math.floor(Math.random() * 1000 + 100) * 10,
-//   img: "@/components/image/白沙灣.jpg",
-// });
-
-// pointData.value.push({
-//   id: "pointData_" + i,
-//   title: "point" + i + "_tilte",
-//   content: "pointData" + i + "_content",
-//   img: "@/components/image/白沙灣.jpg",
-// });
-// }
-// console.log(travelData.value);
 </script>
 
 <template>

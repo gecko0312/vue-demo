@@ -23,6 +23,8 @@ const login = () => {
       ) {
         store.saveToken(res.data[0].id);
         alert("登入成功");
+        res.data[0] == res.data[1];
+        console.log(res.data);
         router.push({ path: "/" });
       } else {
         alert("登入失敗");
@@ -49,12 +51,6 @@ const login = () => {
 </template>
 
 <style scoped>
-/* .body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #a0ced9;
-} */
 .container {
   max-width: 400px;
   margin: 200px auto;

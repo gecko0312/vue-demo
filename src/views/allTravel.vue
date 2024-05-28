@@ -65,7 +65,9 @@ axios.get("http://localhost:3000/countdownData").then((res) => {
             {{ iteam.travel_content }}
           </p>
           <div class="aBox">
-            <a href="#" class="btn btn-primary">馬上參加</a>
+            <RouterLink to="/signUp" class="btn btn-primary"
+              >馬上參加</RouterLink
+            >
           </div>
         </div>
       </div>

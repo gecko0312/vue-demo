@@ -1,17 +1,26 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onBeforeMount } from "vue";
 import headerMenu from "@/views/headerMenu.vue";
 import axios from "axios";
 import { useTokenStore } from "@/stores/token";
-import { useRouter } from "vue-router";
 
 const store = useTokenStore();
 const userData = ref({});
-axios.get(`http://localhost:3000/user?${store.token}`).then((res) => {
-  userData.value = res.data[0];
-  console.log(userData.value);
+const temp = ref([]);
+onBeforeMount(() => {
+  axios.get(`http://localhost:3000/user?${store.token}`).then((res) => {
+    for (let i in res.data) {
+      temp.value.push(res.data[i]);
+    }
+    for (let j in temp.value) {
+      if (temp.value[j].id == store.token) {
+        userData.value = temp.value[j];
+      }
+    }
+    console.log(userData.value);
+  });
 });
-
+console.log(store.token);
 function logout() {
   store.saveToken("f");
 }
@@ -88,15 +97,11 @@ function logout() {
 </template>
 
 <style scoped>
-div {
-  /* border: 1px solid; */
-}
 .body {
   width: 1500px;
   margin: 100px auto;
   padding: 10px;
   display: flex;
-  /* border: 1px solid; */
 }
 .userImgBlock,
 .iteamBlock {

@@ -74,13 +74,11 @@ header {
 }
 .headerBox {
   padding: 0% 20%;
-  /* position: fixed; */
   display: flex;
   width: 100%;
   height: 70px;
   left: 0px;
   top: 0px;
-  /* min-width: 1000px; */
 }
 .navbar {
   background-color: #67ebac;
@@ -91,7 +89,6 @@ header {
   justify-content: flex-end;
   height: 100%;
   padding-top: 20px;
-  /* background: red; */
 }
 .menu_optionBox {
   display: flex;
@@ -99,15 +96,12 @@ header {
   align-items: center;
   padding: 5px 10px;
   height: 50px;
-  /* background: blue; */
-  /* border: solid; */
 }
 .menu_text {
   font-family: "Inter";
   font-style: normal;
   font-size: 20px;
   text-align: center;
-  /* border: 1px solid; */
 }
 /* icon_style */
 .icon_box {

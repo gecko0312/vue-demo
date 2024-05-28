@@ -71,7 +71,6 @@ const createProposal = async () => {
     createDate: NowDate.value,
   });
   alert("成功建立提案");
-  // console.log(AItravel_data.value.text);
 };
 </script>
 

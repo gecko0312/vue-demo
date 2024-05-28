@@ -131,17 +131,14 @@ function backCard() {
   justify-content: center;
   position: relative;
   width: 100%;
-  /* border: 5px solid red; */
 }
 .cardList_BtnPositionBox {
   position: relative;
   width: 1200px;
-  /* border: 10px solid blue; */
 }
 .cardList {
   display: flex;
   overflow-x: scroll;
-  /* border: 5px solid yellow; */
 }
 .cardList::-webkit-scrollbar {
   display: none;
@@ -153,7 +150,6 @@ function backCard() {
   padding: 0px;
 }
 .card-title {
-  /* border: 1px solid; */
   font-family: "Inter";
   font-weight: 600;
   font-size: 25px;
@@ -230,17 +226,8 @@ function backCard() {
   height: 50px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 1px;
   border: 1px solid rgb(255, 255, 255);
-  /* 透明度 */
-  /* opacity: 0.8; */
   background-color: rgb(255, 255, 255);
   border-radius: 50%;
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
-  /* -webkit-box-align: center; */
-  /* -webkit-box-pack: center; */
-  /* transition: all 0.3s ease 0s; */
-  /* transform: scale(1); */
 }
 
 .cardCountdownTimetext {

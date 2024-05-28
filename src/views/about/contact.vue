@@ -54,7 +54,6 @@ h1 {
   color: #ffd000;
   text-align: center;
 }
-
 form {
   background-color: #fff;
   padding: 20px;
@@ -63,14 +62,12 @@ form {
   width: 80%;
   margin: 0 auto;
 }
-
 label {
   display: block;
   margin-bottom: 8px;
   font-weight: bold;
   color: #000;
 }
-
 input[type="text"],
 input[type="email"],
 textarea {
@@ -81,7 +78,6 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-
 input[type="submit"] {
   background-color: #00b35f;
   color: #fff;
@@ -91,7 +87,6 @@ input[type="submit"] {
   cursor: pointer;
   font-size: 16px;
 }
-
 input[type="submit"]:hover {
   background-color: #00b35f;
 }

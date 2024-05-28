@@ -79,6 +79,7 @@ const router = createRouter({
       name: "signUp",
       component: () => import("../views/travelView/signUp.vue"),
     },
+    // 結帳
     {
       path: "/checkOut",
       name: "checkOut",

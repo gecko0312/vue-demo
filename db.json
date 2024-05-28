@@ -12,14 +12,14 @@
   "travelProposal": [],
   "travelData": [
     {
-      "id": 1,
+      "id": "1",
       "title": "花蓮出發．四人成行",
       "max": 36,
       "current": 24,
       "content": "電動單車，暢遊花蓮",
       "discountNumber": 20,
       "discountMoney": 400,
-      "title_img": "https://cdn.discordapp.com/attachments/1172885341980602439/1243531807476158574/78d19a01d54aded4.jpg?ex=6651d0be&is=66507f3e&hm=b2babd4f63f15bc5c2c841d0c447188c2fb1af654cffd24d32b04d3f9835d3e4&",
+      "title_img": "https://static.liontech.com.tw/cmspic/PIC2012-003203/M_PIC2012-003203.jpg",
       "first_journey_title": "兩潭自行車道",
       "first_journey_data": "位於花蓮的兩潭自行車步道，其單車路線是由七星潭和鯉魚潭兩條路線所含括串聯，自行車道總長大約46多公里，自行車道平坦易行，且沿途可欣賞豐富又多元的山海、溼地及田園景觀，像是七星潭風景區、賞星廣場、四八高地、花蓮港區、南濱公園、中華紙漿場、舊鐵道、木瓜溪橋、宏卿山莊及鯉魚潭風景區等，騎乘單車遨遊其中，是絕佳的視覺與休閒饗宴。",
       "first_journey_img": "https://tour-hualien-ws.hl.gov.tw/001/Upload/435/relpic/12302/1523/8340b522-8005-4802-9483-c96a1e9a7882.jpg",
@@ -39,18 +39,18 @@
       "travel_content": "洄瀾夢迴～電輔車．悠遊北濱公園．重溫舊時臨港時光．蔚藍七星潭．海闊天空花蓮半日遊 "
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "白沙灣 三日遊",
       "max": 40,
       "current": 19,
       "content": "白沙灣淨灘之旅",
       "discountNumber": 10,
       "discountMoney": 400,
-      "title_img": "https://cdn.discordapp.com/attachments/1172885341980602439/1243534527075319879/11eb98b3541316a1.jpg?ex=6651d347&is=665081c7&hm=7b12dc503445e42786b41b852be38d50f279dbc1e08417ca2a9b6715bc44ab1f&",
+      "title_img": "https://taiwantour.info/wp-content/uploads/2021/09/1631463454-941301cc1f003d7dce7e27ad0c6950d9.jpg",
       "travel_content": "三天兩夜暢遊白沙灣，享受陽光、沙灘與清澈海水，體驗浮潛、沙灘排球等活動，放鬆心情，盡情感受海島度假的美好時光。"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "高屏旅遊",
       "max": 30,
       "current": 19,
@@ -61,7 +61,7 @@
       "travel_content": "高屏旅遊三日遊，走訪貓鼻頭的壯麗海景，漫步於花海花旗木之中，欣賞繁花似錦的美景，感受自然與人文的完美結合。"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "新北旅遊",
       "max": 37,
       "current": 26,
@@ -72,7 +72,7 @@
       "travel_content": "新北旅遊，乘坐平溪列車，探訪三貂嶺的自然美景，體驗沿途古樸小鎮的獨特風情，享受輕鬆悠閒的鐵道之旅。"
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "基隆出發",
       "max": 8,
       "current": 3,
@@ -83,7 +83,7 @@
       "travel_content": "從基隆啟程，展開5日的鹿兒島·那霸之旅，探索火山島魅力，品嚐異國美食，感受南島風情，讓旅程充滿驚喜與回憶。"
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "桃園旅遊",
       "max": 22,
       "current": 8,
@@ -161,7 +161,7 @@
       "id": "pointData_2",
       "title": "熱氣球體驗卷",
       "content": "台東繽紛熱氣球 翱翔天際 欣賞絕美高山景觀 闔家同樂，歡樂一夏 立即兌換，搶先體驗！",
-      "title_img": "https://cdn.discordapp.com/attachments/1172885341980602439/1243548614459129906/3446af7e573c9cc4.jpg?ex=6651e065&is=66508ee5&hm=3c5474f14cae71237feb825d22b9dfbafb981c003a32e124455b8376cf892831&"
+      "title_img": "https://wandou.tw/wp-content/uploads/20200729205535_85.jpg"
     },
     {
       "id": "pointData_3",
